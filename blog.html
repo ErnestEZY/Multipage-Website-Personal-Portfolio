@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="utility.css">
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!--Header-->
+    <nav class="navbar">
+      <div class="container">
+        <div class="brand-and-toggler">
+          <a href="index.html" class="navbar-brand">Zhong Yu</a>
+          <button type="button" class="navbar-toggler" id="navbar-toggler" title="button">
+            <span>
+              <i class="fas fa-bars"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class="navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a href="index.html" class="nav-link">home</a>
+            </li>
+            <li class="nav-item">
+              <a href="about.html" class="nav-link">about</a>
+            </li>
+            <li class="nav-item">
+              <a href="services.html" class="nav-link">services</a>
+            </li>
+            <li class="nav-item nav-active">
+              <a href="blog.html" class="nav-link">blog</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Blog-->
+    <section class="blog container">
+      <div class="title">
+        <h2>posts</h2>
+        <div>
+          <h2>my blog</h2>
+        </div>
+      </div>
+
+      <p class="text">Welcome to my blog, in here I share my activities and also projects that I did. Feel free to explore my blog further!</p>
+
+      <div class="row">
+        <div class="item">
+          <div class="item-img">
+            <img src="assets/blog-img-1.jpg" alt="Picture of POS System" loading="lazy">
+          </div>
+          <div class="item-content">
+            <span>may 24, 2024 &nbsp; admin
+              <i class="fas fa-comment-alt"></i> 2
+            </span>
+            <h2>Python Hotel Booking System</h2>
+            <p class="text">In this project, my group and I worked on an engaging project: building a Hotel Booking System using Python. The Hotel Booking System was designed to simplify booking processes for customers. It allowed them to check available rooms, make reservations, and manage their bookings effortlessly. Behind the scenes, the system handled room availability, pricing, and customer details smoothly. It also generated invoices for customers upon booking confirmation. Throughout this project, we put our Python skills to work, learning how to use loops, functions, arrays, and file handling effectively.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img">
+            <img src="assets/blog-img-2.jpg" alt="group of students volunteer tree planting" loading="lazy">
+          </div>
+          <div class="item-content">
+            <span>nov 30, 2022 &nbsp; admin
+              <i class="fas fa-comment-alt"></i> 3
+            </span>
+            <h2>Free Tree Volunteering (Team Trees)</h2>
+            <p class="text">In this project, 10 group members represent as "Team Trees" and went to Bangsar to volunteer for planting trees in Free Tree Society for our MPU 2432 project. In this event, we were given a talk about the importance of sustainability. We also did some interesting activities such as composting waste, cleaning out leaves, organizing branches, watering plants and more. After that, we were given material provided to plant our own tree.</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-img">
+            <img src="assets/blog-img-3.jpg" alt = "music background image" loading="lazy">
+          </div>
+          <div class="item-content">
+            <span>oct 27, 2023 &nbsp; admin
+              <i class="fas fa-comment-alt"></i> 1
+            </span>
+            <h2>Java Music Library Manager</h2>
+            <p class="text">In this project, we required to design a system to manage a music library manager system. Some activities can be performed such as add album, add song to album, search for an album and display all albums. The program that we did includes the knowledge that we learned in Object-Oriented Programming subject, such as method, array, object class, object composition and exception handling.</p>
+          </div>
+        </div>
+    </section>
+
+    <!--Projects-->
+    <section class="projects container">
+      <div class="title">
+        <h2>projects</h2>
+        <div>
+          <h2>my projects</h2>
+        </div>
+      </div>
+
+      <p class="text">Not only that, I have also create many projects during my studies and internships. To view my project description, you can click on the picture and click on the "Read More" to further understand my projects.</p>
+
+      <div class="row">
+        <div class="item" data-project="vendingMachine">
+          <div class="item-overlay">
+            <h2>Vending Machine</h2>
+            <h3>Programming - C++</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+
+        <div class="item" data-project="libraryLendingSystem">
+          <div class="item-overlay">
+            <h2>Library Lending System</h2>
+            <h3>Programming - C++</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+
+        <div class="item" data-project="charityWebsite">
+          <div class="item-overlay">
+            <h2>Charity Website - Kebso.Life</h2>
+            <h3>Web Design - WordPress</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+
+        <div class="item" data-project="onlineQuiz">
+          <div class="item-overlay">
+            <h2>Online Quiz Development</h2>
+            <h3>Web Development - HTML CSS PHP</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+
+        <div class="item" data-project="posPizzaSystem">
+          <div class="item-overlay">
+            <h2>POS Pizza System</h2>
+            <h3>Programming - Python</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+
+        <div class="item" data-project="invoiceSystem">
+          <div class="item-overlay">
+            <h2>JMB Send Monthly Invoice System</h2>
+            <h3>System Development - Internship</h3>
+            <a href="">Read More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Modals for Project Description-->
+    <div class="modal" id="vendingMachine">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-1.jpg" alt="Picture of Vending Machine" loading="lazy">
+        <h2>Vending Machine (C++)</h2>
+        <p>"It is one of the project that my group member and I did during Semester 1 in when we are learning Fundamental of Programming. We are required to develop and come out a program about a vending machine using C++  programming language. The program shows the customer the different product sold by the Vending Machine and let the customer make any kind of selection. After that, it will show the customer the item that they selected and the total price. Lastly, the Vending Machine will accept money from customer and give the item and produce a receipt for customer."</p>
+      </div>
+    </div>
+
+    <div class="modal" id="libraryLendingSystem">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-2.jpg" alt="Picture of Library System" loading="lazy">
+        <h2>Library Lending System (C++)</h2>
+        <p>"For this project, my group and I did a Case Study Mini-Project that is about library lending system in Semester 3. The objective of this project is to demonstrate our understanding of essential data structures, their applications and the operations they support. In this project, we required to design a system to manage a library's lending system. Information includes book ID, member ID, loan date, due date and return date. The program that we did includes the knowledge that we learned in Data Structure subject, such as multi-file project structure, dynamic arrays, functions and classes."</p>
+      </div>
+    </div>
+
+    <div class="modal" id="charityWebsite">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-3.jpg" alt="Picture of Charity Website build for Kebso.Life" loading="lazy">
+        <h2>Charity Website - Kebso.Life (WordPress)</h2>
+        <p>"It is one of the interesting project that my group member and I did during Semester 4 where we are studying User Experience. Our task it to work together with a charity and produce a website to improve their old website as well as satisfying our user experience methodology that we learned. We conduct many meetings to fulfill some requirement requested by the founder of the charity, Dr John Raj. During the project, we use Pantheon.io as our hosting site and WordPress for our website development. Once everything is done, we hand over the website to the charity and we were reward with a certificate."</p>
+        <a href="assets/Certificate_of_Appreciation.pdf" download="Certificate_of_Appreciation.pdf" title="certificate" style="color: blue; text-decoration: underline;">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="modal" id="onlineQuiz">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-4.jpg" alt="Picture of Online Quiz" loading="lazy">
+        <h2>Online Quiz Development (HTML CSS JavaScript PHP MySQL)</h2>
+        <p>"It is a project that I did back in my high school study where I'm having basic Computer Science class. The project requires us to create a online quiz that students and teacher can be login. For teachers, it has the ability to modify question, view marks and add questions. While students, has the ability to answer quiz. It is quite challenging as it was my first time going through web development stages. The tool I used are HTML, CSS, JavaScript, PHP and MySQL. This project has clearly shown the overall process of developing a proper website and has given me a better understanding during web development."</p>
+      </div>
+    </div>
+
+    <div class="modal" id="posPizzaSystem">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-5.jpg" alt="Picture of POS Pizza System" loading="lazy">
+        <h2>POS Pizza System (Python)</h2>
+        <p>"It is one of the project that my group member and I did during Semester 5 where we are learning High Level Programming. We are required to develop a program about Pizza POS System using Python programming language. The program will let admin to enter the ingredient to prepare for the pizza preparation. Then customer can choose to order pizza list in the program and a receipt will be produced. Admin can also check the total sold pizzas to calculate profits as well as check leftover ingredients."</p>
+      </div>
+    </div>
+
+    <div class="modal" id="invoiceSystem">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img class="pic" src="assets/project-img-6.jpg" alt="Picture of Invoice System" loading="lazy">
+        <h2>JMB Send Monthly Invoice System (G Suite Scripting)</h2>
+        <p>"It is one of the project that I developed during my internship program. As an IT Support, my task it to create automation systems to help the company. One of my task it to create Send Invoice System. This system was created purely using G Suite Scripting which includes, Google Form, Google Sheets, Google Apps Script as well as Zapier automation. The invoice will send to the owner according to the owner email using (Gmail service) and phone number using WhatsApp (Watoolbox automation) provided in the Google Sheets. When admin want to send the invoice, the form will display the unit number so that admin do not lose track. The unit number is also traced in the system. After a full cycle, all the log records will be sent to the boss for record."</p>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer container">
+      <div class="row">
+        <div class="col">
+          <h3 class="footer-title">about</h3>
+          <p class="text">Highly motivated and detail-oriented Computer Science student at INTI International College Subang with a strong foundation in various programming languages.</p>
+        </div>
+
+        <div class="col">
+          <h3 class="footer-title">social media</h3>
+          <div class="footer-links">
+            <a href="https://www.facebook.com/ErnestEZY" class="text" title="Facebook">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              Facebook
+            </a>
+            <a href="https://www.instagram.com/oicuber6/" class="text" title="Instagram">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              Instagram
+            </a>
+            <a href="https://www.linkedin.com/in/eh-zhong-yu-%E3%85%A4-447911281/" class="text" title="LinkedIn">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <h3 class="footer-title">useful links</h3>
+          <div class="footer-links">
+            <a href="index.html" class="text">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              home page
+            </a>
+            <a href="about.html" class="text">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              about page
+            </a>
+            <a href="services.html" class="text">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              services page
+            </a>
+            <a href="blog.html" class="text">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              blog page
+            </a>
+            <a href="contact.html" class="text">
+              <i class="fas fa-long-arrow-alt-right"></i>
+              contact page
+            </a>
+          </div>
+        </div>
+
+        <div class="col">
+          <h3 class="footer-title">have a question?</h3>
+          <div>
+            <span>
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            <span class="text">B211 Nuri Apartment, Jalan Suria U5/104, Bandar Pinggiran Subang 2</span>
+          </div>
+
+          <div>
+            <span>
+              <i class="fas fa-phone"></i>
+            </span>
+            <span class="text">+6016-981 9647</span>
+          </div>
+
+          <div>
+            <span>
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="text">ernestzhongyu@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-text">
+        <p class="text">Copyright &copy; 2024 Eh Zhong Yu All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">
+      <!--Used W3 for Button to Scroll to Top-->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path d="M12 9.41l-4.59 4.59L6 12l6-6 6 6-1.41 1.41L12 9.41z" />
+      </svg>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
