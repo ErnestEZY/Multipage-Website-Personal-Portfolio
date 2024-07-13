@@ -8,11 +8,11 @@ This is a multi-page personal portfolio website created using HTML, CSS, and Jav
 -**About Page**: Background, resume, education and work experience.
 -**Services Page**: Details about the services offered and skills acquired.
 -**Blog Page**: Posts related to project building and sample projects.
--**Contact Page**: A form with details for visitors to send inquiries and faq.
+-**Contact Page**: A form with details for visitors to send inquiries and FAQ.
 
 *Additional Features*
 **Accessibility**
--Contrast and Text Size: Ensuring sufficient contrast between text and background colors and using readable text sizes.
+-Contrast and Text Size: Ensuring sufficient contrast between text and background colour and using readable text sizes.
 -Scroll back to top button: Allow user to scroll back
 -Responsive Layout: CSS Grid allows for a responsive layout that adapts to different screen sizes, ensuring content remains readable and usable across devices.
 -Browsers Compatibility: HTML and CSS structure are designed to ensure cross-browser compatibility like Firefox, Safari, Edge, Chrome, Opera and so on to provide a consistent user experience across different platforms.

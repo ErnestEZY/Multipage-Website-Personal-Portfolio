@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function() {
               }
           });
           emailjs.sendForm(
-              'service_zm2xz71',
-              'template_exo16bc',
+              '[Your email service ID in EmailJS]',
+              '[Your email template ID in EmailJS]',
               '#contact-form',
-              'T-mg12gUKzKu5IMRx'
+              '[Your personal public key in EmailJS]'
           ).then((result) => {
               Swal.fire({
                   icon: "success",
@@ -174,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (downloadButton) { 
     downloadButton.addEventListener('click', function() {
       const link = document.createElement('a');
-      link.href = 'assets/EhZhongYu_Resume.pdf';
-      link.download = 'EhZhongYu_Resume.pdf';
+      link.href = '';
+      link.download = '';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
