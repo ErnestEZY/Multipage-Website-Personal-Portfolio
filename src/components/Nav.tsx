@@ -16,8 +16,17 @@ export default function Nav() {
   return (
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="container nav-inner">
-        <Link className="brand" to="/" onClick={() => setOpen(false)}>
-          Zhong <span>Yu</span>
+        <Link
+          className="brand"
+          to="/"
+          onClick={() => setOpen(false)}
+          aria-label="EZY — Eh Zhong Yu home"
+        >
+          <span className="brand-mark" aria-hidden="true">
+            <span>E</span>
+            <span>Z</span>
+            <span>Y</span>
+          </span>
         </Link>
 
         <button

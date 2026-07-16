@@ -1,5 +1,5 @@
 export const site = {
-  name: "Eh Zhong Yu",
+  name: "Eh Zhong Yu (Ernest)",
   brand: "Zhong Yu",
   role: "Software Engineering Student & Developer",
   tagline:

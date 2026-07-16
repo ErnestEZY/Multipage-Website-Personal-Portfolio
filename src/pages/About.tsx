@@ -67,8 +67,8 @@ export default function About() {
               <img
                 src={site.photo}
                 alt={`Portrait of ${site.name}`}
-                width={720}
-                height={900}
+                width={680}
+                height={800}
                 loading="lazy"
               />
             </div>
