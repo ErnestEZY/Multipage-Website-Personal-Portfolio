@@ -1,0 +1,176 @@
+import { site } from "../data/site";
+import { timeline } from "../data/education";
+import { highlights } from "../data/highlights";
+import { toolbox, waysOfWorking } from "../data/toolbox";
+import Timeline from "../components/Timeline";
+import SectionHeader from "../components/SectionHeader";
+import { usePageMeta } from "../hooks/usePageMeta";
+import { useReveal } from "../hooks/useReveal";
+
+function HighlightItem({
+  title,
+  description,
+}: (typeof highlights)[number]) {
+  const ref = useReveal<HTMLElement>();
+
+  return (
+    <article className="highlight-item reveal" ref={ref}>
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </article>
+  );
+}
+
+function ToolboxGroup({
+  label,
+  note,
+  items,
+}: (typeof toolbox)[number]) {
+  const ref = useReveal<HTMLElement>();
+
+  return (
+    <article className="toolbox-group reveal" ref={ref}>
+      <h3>{label}</h3>
+      <p className="toolbox-note">{note}</p>
+      <ul className="toolbox-tags">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
+export default function About() {
+  usePageMeta(
+    "About",
+    `About ${site.name} — education, experience, toolbox, and what drives me.`,
+  );
+
+  const photoRef = useReveal<HTMLDivElement>();
+  const bioRef = useReveal<HTMLDivElement>();
+  const waysRef = useReveal<HTMLDivElement>();
+
+  return (
+    <>
+      <section className="section">
+        <div className="container">
+          <SectionHeader
+            as="h1"
+            eyebrow="About"
+            title={`Hi, I’m ${site.name}`}
+            lead="I’m a Software Engineering student at UOW Malaysia with a Diploma in Computer Science from INTI. I care about building useful web and app experiences and keeping learning practical."
+          />
+
+          <div className="about-grid">
+            <div className="about-photo reveal" ref={photoRef}>
+              <img
+                src={site.photo}
+                alt={`Portrait of ${site.name}`}
+                width={720}
+                height={900}
+                loading="lazy"
+              />
+            </div>
+
+            <div className="reveal" ref={bioRef}>
+              <p style={{ color: "var(--text-muted)", marginBottom: "1rem" }}>
+                I enjoy turning ideas into working software — from coursework
+                systems to small web products — and I’m always looking for ways
+                to write clearer code and better interfaces.
+              </p>
+
+              <dl className="about-details">
+                <div>
+                  <dt>Name</dt>
+                  <dd>{site.name}</dd>
+                </div>
+                <div>
+                  <dt>Location</dt>
+                  <dd>{site.location}</dd>
+                </div>
+                <div>
+                  <dt>Email</dt>
+                  <dd>
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Phone</dt>
+                  <dd>
+                    <a href={`tel:${site.phone.replace(/\s|-/g, "")}`}>
+                      {site.phone}
+                    </a>
+                  </dd>
+                </div>
+              </dl>
+
+              <a
+                className="btn btn-primary"
+                href={site.resume}
+                download="EhZhongYu_Resume.pdf"
+              >
+                Download resume
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <SectionHeader
+            eyebrow="Path"
+            title="Education & experience"
+            lead="Milestones from school through diploma, internship, and bachelor studies."
+          />
+          <Timeline items={timeline} />
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <SectionHeader
+            eyebrow="Who I am"
+            title="What I bring"
+            lead="A clearer picture of how I work — building, data, engineering habits, and curiosity."
+          />
+          <div className="highlight-grid">
+            {highlights.map((item) => (
+              <HighlightItem key={item.title} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <SectionHeader
+            eyebrow="Toolbox"
+            title="Technologies I’ve worked with"
+            lead="Across coursework, projects, and internships — grouped by familiarity, not proficiency scores."
+          />
+
+          <div className="toolbox-grid">
+            {toolbox.map((group) => (
+              <ToolboxGroup key={group.label} {...group} />
+            ))}
+          </div>
+
+          <div className="ways-block reveal" ref={waysRef}>
+            <h3>Ways of working</h3>
+            <p>
+              Practices I try to carry into projects — software engineering
+              habits and careful use of modern AI tools.
+            </p>
+            <ul className="toolbox-tags toolbox-tags--soft">
+              {waysOfWorking.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
