@@ -67,6 +67,7 @@ export const toolbox: ToolboxGroup[] = [
       "Express.js",
       "React Native",
       "AWS",
+      "Google Cloud Platform",
       "Docker",
       "Kubernetes",
     ],
