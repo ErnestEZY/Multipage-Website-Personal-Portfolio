@@ -4,10 +4,9 @@ import Faq from "../components/Faq";
 import SectionHeader from "../components/SectionHeader";
 import {
   EmailIcon,
-  GitHubIcon,
-  LinkedInIcon,
   LocationIcon,
   PhoneIcon,
+  SocialIcon,
 } from "../components/Icons";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useReveal } from "../hooks/useReveal";
@@ -75,11 +74,7 @@ export default function Contact() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        {s.label === "GitHub" ? (
-                          <GitHubIcon size={15} />
-                        ) : s.label === "LinkedIn" ? (
-                          <LinkedInIcon size={15} />
-                        ) : null}
+                        <SocialIcon label={s.label} />
                         <span>{s.label}</span>
                       </a>
                     ))}

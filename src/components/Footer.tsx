@@ -2,17 +2,10 @@ import { Link } from "react-router-dom";
 import { site, navLinks } from "../data/site";
 import {
   EmailIcon,
-  GitHubIcon,
-  LinkedInIcon,
   LocationIcon,
   PhoneIcon,
+  SocialIcon,
 } from "./Icons";
-
-function SocialIcon({ label }: { label: string }) {
-  if (label === "GitHub") return <GitHubIcon size={15} />;
-  if (label === "LinkedIn") return <LinkedInIcon size={15} />;
-  return null;
-}
 
 export default function Footer() {
   const socials = site.socials.filter((s) => s.href);

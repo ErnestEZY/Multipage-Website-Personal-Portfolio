@@ -92,3 +92,60 @@ export function LinkedInIcon(props: IconProps) {
     </svg>
   );
 }
+
+/** Stylized WCA cube mark inspired by the official brand logo. */
+export function WcaIcon(props: IconProps) {
+  const size = props.size ?? 16;
+  return (
+    <svg
+      className={props.className}
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      aria-hidden="true"
+    >
+      {/* Top face — yellow */}
+      <path fill="#F6C700" d="M12 3.2 4.8 7.2 12 11.2l7.2-4-7.2-4Z" />
+      {/* Left face — blue */}
+      <path fill="#0051BA" d="M4.8 7.2 12 11.2v8.4L4.8 15.6V7.2Z" />
+      {/* Right face — red */}
+      <path fill="#C41E3A" d="M19.2 7.2 12 11.2v8.4l7.2-4V7.2Z" />
+      {/* Outer outline */}
+      <path
+        fill="none"
+        stroke="#111"
+        strokeWidth="1"
+        strokeLinejoin="round"
+        d="M12 3.2 4.8 7.2v8.4L12 19.6l7.2-4V7.2L12 3.2Z"
+      />
+      {/* Face seams */}
+      <path
+        fill="none"
+        stroke="#111"
+        strokeWidth="1"
+        d="M4.8 7.2 12 11.2l7.2-4M12 11.2v8.4"
+      />
+      {/* 3×3 sticker grid hints */}
+      <path
+        fill="none"
+        stroke="#111"
+        strokeWidth="0.75"
+        opacity="0.85"
+        d="M8.4 5.2 15.6 9.2M8.4 9.2 15.6 13.2M8.4 13.6v4M15.6 9.6v4"
+      />
+    </svg>
+  );
+}
+
+export function SocialIcon({
+  label,
+  size = 15,
+}: {
+  label: string;
+  size?: number;
+}) {
+  if (label === "GitHub") return <GitHubIcon size={size} />;
+  if (label === "LinkedIn") return <LinkedInIcon size={size} />;
+  if (label === "WCA") return <WcaIcon size={size} />;
+  return null;
+}

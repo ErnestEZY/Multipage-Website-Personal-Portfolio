@@ -20,6 +20,10 @@ export const site = {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/eh-zhong-yu-447911281/",
     },
+    {
+      label: "WCA",
+      href: "https://www.worldcubeassociation.org/persons/2017YUER01",
+    },
     { label: "Instagram", href: "" },
   ],
 } as const;

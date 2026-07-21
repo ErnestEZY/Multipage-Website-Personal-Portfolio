@@ -6,10 +6,9 @@ import Timeline from "../components/Timeline";
 import SectionHeader from "../components/SectionHeader";
 import {
   EmailIcon,
-  GitHubIcon,
-  LinkedInIcon,
   LocationIcon,
   PhoneIcon,
+  SocialIcon,
   UserIcon,
 } from "../components/Icons";
 import { usePageMeta } from "../hooks/usePageMeta";
@@ -139,11 +138,7 @@ export default function About() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {s.label === "GitHub" ? (
-                            <GitHubIcon size={15} />
-                          ) : s.label === "LinkedIn" ? (
-                            <LinkedInIcon size={15} />
-                          ) : null}
+                          <SocialIcon label={s.label} />
                           <span>{s.label}</span>
                         </a>
                       ))}
