@@ -4,6 +4,14 @@ import { highlights } from "../data/highlights";
 import { toolbox, waysOfWorking } from "../data/toolbox";
 import Timeline from "../components/Timeline";
 import SectionHeader from "../components/SectionHeader";
+import {
+  EmailIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  LocationIcon,
+  PhoneIcon,
+  UserIcon,
+} from "../components/Icons";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useReveal } from "../hooks/useReveal";
 
@@ -83,24 +91,62 @@ export default function About() {
               <dl className="about-details">
                 <div>
                   <dt>Name</dt>
-                  <dd>{site.name}</dd>
+                  <dd className="meta-row">
+                    <UserIcon />
+                    <span>{site.name}</span>
+                  </dd>
                 </div>
                 <div>
                   <dt>Location</dt>
-                  <dd>{site.location}</dd>
+                  <dd className="meta-row">
+                    <LocationIcon />
+                    <span>{site.location}</span>
+                  </dd>
                 </div>
                 <div>
                   <dt>Email</dt>
                   <dd>
-                    <a href={`mailto:${site.email}`}>{site.email}</a>
+                    <a className="meta-row" href={`mailto:${site.email}`}>
+                      <EmailIcon />
+                      <span>{site.email}</span>
+                    </a>
                   </dd>
                 </div>
                 <div>
                   <dt>Phone</dt>
                   <dd>
-                    <a href={`tel:${site.phone.replace(/\s|-/g, "")}`}>
-                      {site.phone}
+                    <a
+                      className="meta-row"
+                      href={site.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <PhoneIcon />
+                      <span>{site.phone}</span>
                     </a>
+                  </dd>
+                </div>
+                <div>
+                  <dt>Profiles</dt>
+                  <dd className="about-socials">
+                    {site.socials
+                      .filter((s) => s.href)
+                      .map((s) => (
+                        <a
+                          key={s.label}
+                          className="meta-row"
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {s.label === "GitHub" ? (
+                            <GitHubIcon size={15} />
+                          ) : s.label === "LinkedIn" ? (
+                            <LinkedInIcon size={15} />
+                          ) : null}
+                          <span>{s.label}</span>
+                        </a>
+                      ))}
                   </dd>
                 </div>
               </dl>

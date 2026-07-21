@@ -1,5 +1,18 @@
 import { Link } from "react-router-dom";
 import { site, navLinks } from "../data/site";
+import {
+  EmailIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  LocationIcon,
+  PhoneIcon,
+} from "./Icons";
+
+function SocialIcon({ label }: { label: string }) {
+  if (label === "GitHub") return <GitHubIcon size={15} />;
+  if (label === "LinkedIn") return <LinkedInIcon size={15} />;
+  return null;
+}
 
 export default function Footer() {
   const socials = site.socials.filter((s) => s.href);
@@ -28,19 +41,35 @@ export default function Footer() {
           <div>
             <h2 className="footer-title">Contact</h2>
             <div className="footer-meta">
-              <span>{site.location}</span>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-              <a href={`tel:${site.phone.replace(/\s|-/g, "")}`}>{site.phone}</a>
+              <span className="meta-row">
+                <LocationIcon />
+                <span>{site.location}</span>
+              </span>
+              <a className="meta-row" href={`mailto:${site.email}`}>
+                <EmailIcon />
+                <span>{site.email}</span>
+              </a>
+              <a
+                className="meta-row"
+                href={site.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <PhoneIcon />
+                <span>{site.phone}</span>
+              </a>
               {socials.length > 0 && (
-                <div className="footer-links" style={{ marginTop: "0.75rem" }}>
+                <div className="footer-socials">
                   {socials.map((s) => (
                     <a
                       key={s.label}
+                      className="meta-row"
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {s.label}
+                      <SocialIcon label={s.label} />
+                      <span>{s.label}</span>
                     </a>
                   ))}
                 </div>

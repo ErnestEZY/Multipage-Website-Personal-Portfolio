@@ -639,6 +639,45 @@ button {
   font-size: 0.95rem;
 }
 
+.footer-meta a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.footer-meta a:hover,
+.footer-meta a:focus-visible {
+  color: var(--accent);
+}
+
+.meta-row {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  line-height: 1.45;
+}
+
+.meta-row > svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--accent);
+  opacity: 0.9;
+}
+
+.footer-socials,
+.about-socials,
+.contact-socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: 0.35rem;
+}
+
+.footer-socials {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
 .footer-bottom {
   margin-top: var(--space-6);
   padding-top: var(--space-5);
@@ -989,14 +1028,20 @@ button {
   margin-bottom: var(--space-3);
 }
 
-.about-details dd a {
+.about-details dd a,
+.about-details .about-socials a {
   color: var(--text);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.about-details dd a:hover {
+.about-details dd a:hover,
+.about-details .about-socials a:hover {
   color: var(--accent);
+}
+
+.about-details .meta-row > svg {
+  text-decoration: none;
 }
 
 /* Timeline */
@@ -1225,6 +1270,10 @@ button {
 }
 
 .contact-list a:hover {
+  color: var(--accent);
+}
+
+.contact-list .meta-row > svg {
   color: var(--accent);
 }
 

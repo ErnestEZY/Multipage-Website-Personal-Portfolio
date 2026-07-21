@@ -83,7 +83,7 @@ function InterestRow({
 export default function Journey() {
   usePageMeta(
     "Journey",
-    `Degrees, milestones, and hobbies of ${site.name} — Software Engineering at UOW Malaysia, diploma, speedcubing, Wing Chun, and gaming.`,
+    `Studies, milestones, and hobbies of ${site.name} — Software Engineering at UOW Malaysia, diploma, speedcubing, Wing Chun, and gaming.`,
   );
 
   const introRef = useReveal<HTMLDivElement>();
@@ -102,7 +102,7 @@ export default function Journey() {
                 <span>01</span> Personal dossier
               </p>
               <h1>
-                <span className="dossier-line">Degrees &amp; milestones</span>
+                <span className="dossier-line">Studies &amp; milestones</span>
                 <span className="dossier-line dossier-line--soft">
                   plus life offline
                 </span>
@@ -118,15 +118,15 @@ export default function Journey() {
 
       <div className="container dossier-layout">
         <aside className="dossier-nav" aria-label="Journey sections">
-          <a href="#degrees">Degrees</a>
+          <a href="#studies">Studies</a>
           <a href="#log">Log</a>
           <a href="#interests">Interests</a>
         </aside>
 
         <div className="dossier-main">
-          <section id="degrees" className="dossier-block" aria-labelledby="degrees-heading">
+          <section id="studies" className="dossier-block" aria-labelledby="studies-heading">
             <div className="dossier-block-head">
-              <h2 id="degrees-heading">Degrees</h2>
+              <h2 id="studies-heading">Studies</h2>
               <p>Formal education path — current bachelor and completed diploma.</p>
             </div>
             <div className="dossier-degrees">

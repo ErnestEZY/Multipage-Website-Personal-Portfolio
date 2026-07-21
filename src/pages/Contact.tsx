@@ -2,6 +2,13 @@ import { site } from "../data/site";
 import ContactForm from "../components/ContactForm";
 import Faq from "../components/Faq";
 import SectionHeader from "../components/SectionHeader";
+import {
+  EmailIcon,
+  GitHubIcon,
+  LinkedInIcon,
+  LocationIcon,
+  PhoneIcon,
+} from "../components/Icons";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useReveal } from "../hooks/useReveal";
 
@@ -31,17 +38,52 @@ export default function Contact() {
             <div className="contact-list">
               <div>
                 <span>Location</span>
-                <p>{site.location}</p>
+                <p className="meta-row">
+                  <LocationIcon />
+                  <span>{site.location}</span>
+                </p>
               </div>
               <div>
                 <span>Email</span>
-                <a href={`mailto:${site.email}`}>{site.email}</a>
+                <a className="meta-row" href={`mailto:${site.email}`}>
+                  <EmailIcon />
+                  <span>{site.email}</span>
+                </a>
               </div>
               <div>
                 <span>Phone</span>
-                <a href={`tel:${site.phone.replace(/\s|-/g, "")}`}>
-                  {site.phone}
+                <a
+                  className="meta-row"
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <PhoneIcon />
+                  <span>{site.phone}</span>
                 </a>
+              </div>
+              <div>
+                <span>Profiles</span>
+                <div className="contact-socials">
+                  {site.socials
+                    .filter((s) => s.href)
+                    .map((s) => (
+                      <a
+                        key={s.label}
+                        className="meta-row"
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {s.label === "GitHub" ? (
+                          <GitHubIcon size={15} />
+                        ) : s.label === "LinkedIn" ? (
+                          <LinkedInIcon size={15} />
+                        ) : null}
+                        <span>{s.label}</span>
+                      </a>
+                    ))}
+                </div>
               </div>
             </div>
           </aside>
