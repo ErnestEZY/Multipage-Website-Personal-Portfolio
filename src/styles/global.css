@@ -987,7 +987,7 @@ button {
 }
 
 .about-photo {
-  width: min(100%, 18rem);
+  width: min(100%, 25rem);
   margin-inline: auto;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -998,7 +998,7 @@ button {
 
 @media (min-width: 880px) {
   .about-photo {
-    width: min(100%, 25rem);
+    width: min(100%, 30rem);
     margin-inline: 0;
   }
 }
