@@ -1459,6 +1459,18 @@ button {
   color: var(--text-muted);
 }
 
+.modal-dialog p a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  word-break: break-all;
+}
+
+.modal-dialog p a:hover,
+.modal-dialog p a:focus-visible {
+  color: var(--accent);
+}
+
 body.modal-open {
   overflow: hidden;
 }

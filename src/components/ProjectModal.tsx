@@ -1,10 +1,27 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 import type { Project } from "../data/projects";
 
 type Props = {
   project: Project | null;
   onClose: () => void;
 };
+
+function linkifyDescription(text: string): ReactNode[] {
+  return text.split(/(https?:\/\/[^\s]+)/g).map((part, index) =>
+    /^https?:\/\//.test(part) ? (
+      <a
+        key={index}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {part}
+      </a>
+    ) : (
+      <span key={index}>{part}</span>
+    ),
+  );
+}
 
 export default function ProjectModal({ project, onClose }: Props) {
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -53,7 +70,7 @@ export default function ProjectModal({ project, onClose }: Props) {
         <img src={project.image} alt={project.alt} loading="lazy" />
         <p className="modal-category">{project.category}</p>
         <h2 id="project-modal-title">{project.title}</h2>
-        <p>{project.description}</p>
+        <p>{linkifyDescription(project.description)}</p>
       </div>
     </div>
   );
