@@ -4,6 +4,7 @@ import { highlights } from "../data/highlights";
 import { toolbox, waysOfWorking } from "../data/toolbox";
 import Timeline from "../components/Timeline";
 import SectionHeader from "../components/SectionHeader";
+import MobileCollapse from "../components/MobileCollapse";
 import {
   EmailIcon,
   LocationIcon,
@@ -160,56 +161,58 @@ export default function About() {
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <SectionHeader
+          <MobileCollapse
             eyebrow="Path"
             title="Education & experience"
             lead="Milestones from school through diploma, internship, and bachelor studies."
-          />
-          <Timeline items={timeline} />
+          >
+            <Timeline items={timeline} />
+          </MobileCollapse>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <SectionHeader
+          <MobileCollapse
             eyebrow="Who I am"
             title="What I bring"
             lead="A clearer picture of how I work — building, data, engineering habits, and curiosity."
-          />
-          <div className="highlight-grid">
-            {highlights.map((item) => (
-              <HighlightItem key={item.title} {...item} />
-            ))}
-          </div>
+          >
+            <div className="highlight-grid">
+              {highlights.map((item) => (
+                <HighlightItem key={item.title} {...item} />
+              ))}
+            </div>
+          </MobileCollapse>
         </div>
       </section>
 
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <SectionHeader
+          <MobileCollapse
             eyebrow="Toolbox"
             title="Technologies I’ve worked with"
             lead="Across coursework, projects, and internships — grouped by familiarity, not proficiency scores."
-          />
-
-          <div className="toolbox-grid">
-            {toolbox.map((group) => (
-              <ToolboxGroup key={group.label} {...group} />
-            ))}
-          </div>
-
-          <div className="ways-block reveal" ref={waysRef}>
-            <h3>Ways of working</h3>
-            <p>
-              Practices I try to carry into projects — software engineering
-              habits and careful use of modern AI tools.
-            </p>
-            <ul className="toolbox-tags toolbox-tags--soft">
-              {waysOfWorking.map((item) => (
-                <li key={item}>{item}</li>
+          >
+            <div className="toolbox-grid">
+              {toolbox.map((group) => (
+                <ToolboxGroup key={group.label} {...group} />
               ))}
-            </ul>
-          </div>
+            </div>
+
+            <div className="ways-block reveal" ref={waysRef}>
+              <h3>Ways of working</h3>
+              <p>
+                Practices I try to carry into projects — software engineering
+                habits and careful use of modern AI tools.
+              </p>
+              <ul className="toolbox-tags toolbox-tags--soft">
+                {waysOfWorking.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </MobileCollapse>
         </div>
       </section>
     </>

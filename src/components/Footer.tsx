@@ -35,11 +35,11 @@ export default function Footer() {
             <h2 className="footer-title">Contact</h2>
             <div className="footer-meta">
               <span className="meta-row">
-                <LocationIcon />
+                <LocationIcon size={14} />
                 <span>{site.location}</span>
               </span>
               <a className="meta-row" href={`mailto:${site.email}`}>
-                <EmailIcon />
+                <EmailIcon size={14} />
                 <span>{site.email}</span>
               </a>
               <a
@@ -48,7 +48,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <PhoneIcon />
+                <PhoneIcon size={14} />
                 <span>{site.phone}</span>
               </a>
               {socials.length > 0 && (
@@ -61,7 +61,7 @@ export default function Footer() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <SocialIcon label={s.label} />
+                      <SocialIcon label={s.label} size={14} />
                       <span>{s.label}</span>
                     </a>
                   ))}

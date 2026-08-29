@@ -137,6 +137,7 @@ export const projects: Project[] = [
     alt: "Invoice system interface",
     description:
       "Invoice generation and tracking system for billing workflows.",
+    featured: true,
   },
   {
     id: "team-trees",

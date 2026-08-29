@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { site } from "../data/site";
 import { degrees, hobbies, milestones } from "../data/journey";
+import MobileCollapse from "../components/MobileCollapse";
 import { usePageMeta } from "../hooks/usePageMeta";
 import { useReveal } from "../hooks/useReveal";
 
@@ -89,6 +91,23 @@ export default function Journey() {
   const introRef = useReveal<HTMLDivElement>();
   const ctaRef = useReveal<HTMLDivElement>();
 
+  useEffect(() => {
+    const openFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      if (!hash) return;
+      const section = document.getElementById(hash);
+      const details =
+        section instanceof HTMLDetailsElement
+          ? section
+          : section?.querySelector("details");
+      if (details) details.open = true;
+    };
+
+    openFromHash();
+    window.addEventListener("hashchange", openFromHash);
+    return () => window.removeEventListener("hashchange", openFromHash);
+  }, []);
+
   return (
     <div className="journey-page dossier">
       <header className="dossier-top">
@@ -124,28 +143,42 @@ export default function Journey() {
         </aside>
 
         <div className="dossier-main">
-          <section id="studies" className="dossier-block" aria-labelledby="studies-heading">
-            <div className="dossier-block-head">
-              <h2 id="studies-heading">Studies</h2>
-              <p>Formal education path — current bachelor and completed diploma.</p>
-            </div>
-            <div className="dossier-degrees">
-              {degrees.map((degree) => (
-                <DegreeBlock key={degree.title} {...degree} />
-              ))}
-            </div>
+          <section
+            id="studies"
+            className="dossier-block"
+            aria-labelledby="studies-heading"
+          >
+            <MobileCollapse
+              className="dossier-collapse"
+              title="Studies"
+              headingId="studies-heading"
+              lead="Formal education path — current bachelor and completed diploma."
+            >
+              <div className="dossier-degrees">
+                {degrees.map((degree) => (
+                  <DegreeBlock key={degree.title} {...degree} />
+                ))}
+              </div>
+            </MobileCollapse>
           </section>
 
-          <section id="log" className="dossier-block" aria-labelledby="log-heading">
-            <div className="dossier-block-head">
-              <h2 id="log-heading">Activity log</h2>
-              <p>Internship, community work, and recognition.</p>
-            </div>
-            <div className="dossier-logs">
-              {milestones.map((item) => (
-                <LogRow key={item.title} {...item} />
-              ))}
-            </div>
+          <section
+            id="log"
+            className="dossier-block"
+            aria-labelledby="log-heading"
+          >
+            <MobileCollapse
+              className="dossier-collapse"
+              title="Activity log"
+              headingId="log-heading"
+              lead="Internship, community work, and recognition."
+            >
+              <div className="dossier-logs">
+                {milestones.map((item) => (
+                  <LogRow key={item.title} {...item} />
+                ))}
+              </div>
+            </MobileCollapse>
           </section>
 
           <section
@@ -153,15 +186,18 @@ export default function Journey() {
             className="dossier-block"
             aria-labelledby="interests-heading"
           >
-            <div className="dossier-block-head">
-              <h2 id="interests-heading">Interests</h2>
-              <p>Habits that shape how I learn and stay sharp.</p>
-            </div>
-            <div className="dossier-interests">
-              {hobbies.map((hobby, index) => (
-                <InterestRow key={hobby.id} index={index} {...hobby} />
-              ))}
-            </div>
+            <MobileCollapse
+              className="dossier-collapse"
+              title="Interests"
+              headingId="interests-heading"
+              lead="Habits that shape how I learn and stay sharp."
+            >
+              <div className="dossier-interests">
+                {hobbies.map((hobby, index) => (
+                  <InterestRow key={hobby.id} index={index} {...hobby} />
+                ))}
+              </div>
+            </MobileCollapse>
           </section>
 
           <div className="dossier-cta reveal" ref={ctaRef}>

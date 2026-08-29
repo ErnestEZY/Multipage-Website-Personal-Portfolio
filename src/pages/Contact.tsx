@@ -36,21 +36,21 @@ export default function Contact() {
             <h2 className="footer-title">Reach me directly</h2>
             <div className="contact-list">
               <div>
-                <span>Location</span>
+                <span className="contact-label">Location</span>
                 <p className="meta-row">
                   <LocationIcon />
                   <span>{site.location}</span>
                 </p>
               </div>
               <div>
-                <span>Email</span>
+                <span className="contact-label">Email</span>
                 <a className="meta-row" href={`mailto:${site.email}`}>
                   <EmailIcon />
                   <span>{site.email}</span>
                 </a>
               </div>
               <div>
-                <span>Phone</span>
+                <span className="contact-label">Phone</span>
                 <a
                   className="meta-row"
                   href={site.whatsapp}
@@ -62,7 +62,7 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <span>Profiles</span>
+                <span className="contact-label">Profiles</span>
                 <div className="contact-socials">
                   {site.socials
                     .filter((s) => s.href)
