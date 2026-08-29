@@ -1221,10 +1221,6 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-5);
   }
-
-  .home-featured-desktop-hide {
-    display: none;
-  }
 }
 
 .project-card {
@@ -1241,6 +1237,12 @@ button {
     box-shadow var(--transition);
   width: 100%;
   color: inherit;
+}
+
+@media (min-width: 980px) {
+  .project-card.home-featured-desktop-hide {
+    display: none;
+  }
 }
 
 .project-card:hover,
