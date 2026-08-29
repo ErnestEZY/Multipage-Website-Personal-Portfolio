@@ -9,7 +9,7 @@ export const site = {
   phone: "+6016-981 9647",
   /** WhatsApp chat link derived from phone (digits only). */
   whatsapp: "https://wa.me/60169819647",
-  resume: "/assets/EhZhongYu_Resume.pdf",
+  resume: "/assets/EhZhongYu_Resume.pdf?v=20260829",
   photo: "/assets/my-photo.jpg",
   footerBlurb:
     "Software Engineering student at UOW Malaysia with a Diploma in Computer Science from INTI, building web and app projects that solve practical problems.",
