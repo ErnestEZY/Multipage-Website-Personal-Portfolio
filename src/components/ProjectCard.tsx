@@ -4,9 +4,10 @@ import { useReveal } from "../hooks/useReveal";
 type Props = {
   project: Project;
   onOpen: (project: Project) => void;
+  className?: string;
 };
 
-export default function ProjectCard({ project, onOpen }: Props) {
+export default function ProjectCard({ project, onOpen, className }: Props) {
   const ref = useReveal<HTMLButtonElement>();
   const snippet =
     project.description.length > 120
@@ -16,7 +17,7 @@ export default function ProjectCard({ project, onOpen }: Props) {
   return (
     <button
       type="button"
-      className="project-card reveal"
+      className={`project-card reveal${className ? ` ${className}` : ""}`}
       ref={ref}
       aria-haspopup="dialog"
       onClick={() => onOpen(project)}

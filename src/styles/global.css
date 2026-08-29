@@ -1221,6 +1221,10 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-5);
   }
+
+  .home-featured-desktop-hide {
+    display: none;
+  }
 }
 
 .project-card {

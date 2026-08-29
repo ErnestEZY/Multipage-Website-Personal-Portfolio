@@ -153,6 +153,11 @@ export default function Home() {
                   key={project.id}
                   project={project}
                   onOpen={setActive}
+                  className={
+                    project.id === "kpi-monitoring-system"
+                      ? "home-featured-desktop-hide"
+                      : undefined
+                  }
                 />
               ))}
             </div>
