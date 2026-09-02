@@ -12,8 +12,8 @@ import { useReveal } from "../hooks/useReveal";
 const pulseChips = [
   "Software Engineering at UOW Malaysia",
   "Shah Alam",
-  "Speedcubing · WCA 2017YUER01",
-  "Wing Chun",
+  "Speedcubing",
+  "Martial Arts",
   "Python · Java · TypeScript",
   "APIs, databases, and practical builds",
 ];
