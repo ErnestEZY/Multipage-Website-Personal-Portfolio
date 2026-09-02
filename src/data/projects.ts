@@ -82,7 +82,7 @@ export const projects: Project[] = [
     image: "/assets/work-img-3.jpg",
     alt: "Charity website built for Kebso.Life",
     description:
-      "A charity website design and build (Kebso.Life) focused on clear storytelling and easy donation pathways.",
+      "A charity website design and build (Kebso.Life) focused on clear storytelling and easy donation pathways. Prototype / assignment demo: https://live-kebso-life.pantheonsite.io/",
   },
   {
     id: "music-library",

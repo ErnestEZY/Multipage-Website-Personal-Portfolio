@@ -8,7 +8,7 @@ type Props = {
 
 function linkifyDescription(text: string): ReactNode[] {
   return text
-    .split(/(GitHub:|Live:|https?:\/\/[^\s]+)/g)
+    .split(/(GitHub:|Live:|Prototype \/ assignment demo:|https?:\/\/[^\s]+)/g)
     .filter(Boolean)
     .map((part, index) => {
       if (/^https?:\/\//.test(part)) {
@@ -24,7 +24,11 @@ function linkifyDescription(text: string): ReactNode[] {
         );
       }
 
-      if (part === "GitHub:" || part === "Live:") {
+      if (
+        part === "GitHub:" ||
+        part === "Live:" ||
+        part === "Prototype / assignment demo:"
+      ) {
         return (
           <span key={index}>
             <br />
