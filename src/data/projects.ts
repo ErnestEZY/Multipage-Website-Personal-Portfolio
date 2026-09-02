@@ -146,6 +146,6 @@ export const projects: Project[] = [
     image: "/assets/work-img-8.jpg",
     alt: "Students volunteering for tree planting",
     description:
-      "Community volunteering with Team Trees — contributing time to environmental outreach alongside academic life.",
+      "Community volunteering with Team Trees — contributing time to environmental outreach alongside academic life. YouTube video: https://youtu.be/rEO51iO7Gik?si=PI4waUkvn8b77GmJ",
   },
 ];
