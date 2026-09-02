@@ -46,7 +46,7 @@ export const projects: Project[] = [
     image: "/assets/work-fos.jpg",
     alt: "JavaFX food ordering system interface",
     description:
-      "A JavaFX desktop ordering system applying OOP, JDBC, and MySQL — built through STQA and SRE coursework to practise reliable UI flows, data access, and quality-focused development.",
+      "A JavaFX desktop ordering system applying OOP, JDBC, and MySQL — built through STQA and SRE coursework to practise reliable UI flows, data access, and quality-focused development. GitHub: https://github.com/ErnestEZY/food-ordering-system",
   },
   {
     id: "calculator-app",

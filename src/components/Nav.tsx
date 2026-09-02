@@ -6,6 +6,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const handleNavigation = () => {
+    setOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
@@ -19,7 +24,7 @@ export default function Nav() {
         <Link
           className="brand"
           to="/"
-          onClick={() => setOpen(false)}
+          onClick={handleNavigation}
           aria-label="EZY — Eh Zhong Yu home"
         >
           <span className="brand-mark" aria-hidden="true">
@@ -54,7 +59,7 @@ export default function Nav() {
                   }
                   to={link.href}
                   end={link.href === "/"}
-                  onClick={() => setOpen(false)}
+                  onClick={handleNavigation}
                 >
                   {link.label}
                 </NavLink>

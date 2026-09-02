@@ -7,20 +7,34 @@ type Props = {
 };
 
 function linkifyDescription(text: string): ReactNode[] {
-  return text.split(/(https?:\/\/[^\s]+)/g).map((part, index) =>
-    /^https?:\/\//.test(part) ? (
-      <a
-        key={index}
-        href={part}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {part}
-      </a>
-    ) : (
-      <span key={index}>{part}</span>
-    ),
-  );
+  return text
+    .split(/(GitHub:|Live:|https?:\/\/[^\s]+)/g)
+    .filter(Boolean)
+    .map((part, index) => {
+      if (/^https?:\/\//.test(part)) {
+        return (
+          <a
+            key={index}
+            href={part}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {part}
+          </a>
+        );
+      }
+
+      if (part === "GitHub:" || part === "Live:") {
+        return (
+          <span key={index}>
+            <br />
+            <strong>{part}</strong>{" "}
+          </span>
+        );
+      }
+
+      return <span key={index}>{part}</span>;
+    });
 }
 
 export default function ProjectModal({ project, onClose }: Props) {
